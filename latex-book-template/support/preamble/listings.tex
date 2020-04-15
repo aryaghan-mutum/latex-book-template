@@ -1,0 +1,31 @@
+\definecolor{eclipseBlue}{RGB}{42,0.0,255}
+\definecolor{eclipseGreen}{RGB}{63,127,95}
+\definecolor{eclipsePurple}{RGB}{127,0,85}
+
+\lstdefinelanguage{racket}{
+  morekeywords={
+    define
+  },
+  sensitive=false, 
+  morecomment=[l]{`;;`}, 
+  morecomment=[s]{/*}{*/}, 
+  morestring=[b]" 
+}
+
+% % \lstset{language=C++}
+
+% % Set Language
+
+\lstset{language={racket},
+  basicstyle=\small\ttfamily, 
+  captionpos=b, 
+  extendedchars=true, 
+  showstringspaces=false,            % shows blanks in strings
+  commentstyle=\color{commentgreen},
+  keywordstyle=\color{eclipsePurple}, 
+  backgroundcolor=\color{lightgray},
+  stringstyle=\rmfamily,             % normal font for strings
+  breaklines=true,                   % allows breaking of lines
+  frameround=ffff,                   % see manual
+  frame=lines,                       % see manual
+}

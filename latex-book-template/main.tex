@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{book}
+
+%**********************************%
+% PACKAGES, PROPERTIES AND LISTINGS: 
+%**********************************%
+\input{latex-book-template/support/preamble/packages}
+\input{latex-book-template/support/preamble/listings}
+\input{latex-book-template/support/preamble/properties}
+
+\newenvironment{dedication}
+{
+  \cleardoublepage
+  \thispagestyle{empty}
+  \vspace*{\stretch{1}}
+  \hfill\begin{minipage}[t]{0.66\textwidth}
+  \raggedright
+}
+{
+  \end{minipage}
+  \vspace*{\stretch{3}}
+  \clearpage
+}
+
+\makeatletter
+
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+%**************************%
+% Book's title and subtitle
+%**************************%
+\title{\Huge \textbf{Book Title}}
+
+\author{\textsc{Author Name}}
+
+
+%**************************%
+% MAIN
+%**************************%
+\begin{document}
+
+\frontmatter
+\maketitle
+
+\input{latex-book-template/front-matter/2-dedication}
+\input{latex-book-template/front-matter/3-poem}
+\input{latex-book-template/front-matter/4-preface}
+\input{latex-book-template/front-matter/5-brief-contents}
+\input{latex-book-template/front-matter/6-detail-contents}
+
+\mainmatter
+
+\include{index}
+\addcontentsline{toc}{chapter}{Index}
+
+\newpage
+
+\end{document}

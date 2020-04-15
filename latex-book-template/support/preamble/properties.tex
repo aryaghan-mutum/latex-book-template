@@ -1,0 +1,22 @@
+\setlength{\parskip}{.12em}
+\setcounter{secnumdepth}{3}
+
+\newenvironment{ppl}{\fontfamily{ppl}\selectfont}{\par}
+
+\pagenumbering{roman}   
+\allsectionsfont{\sffamily} %font style for all sections 
+
+%Adjust the Table of Contents 
+\makeatletter
+\renewcommand\chapter{\addtocontents{toc}{\protect\addvspace{2\p@}}%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \thispagestyle{plain}%
+  \global\@topnum\z@
+  \@afterindentfalse
+  \secdef\@chapter\@schapter}
+\renewcommand\section{\addtocontents{toc}{\protect\addvspace{6\p@}}%
+  \@startsection {section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus.2ex}%
+  {\normalfont\Large\bfseries}}
+\makeatother
